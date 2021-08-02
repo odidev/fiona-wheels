@@ -11,7 +11,7 @@ function build_geos {
 
 
 function build_jsonc {
-    build_simple json-c $JSONC_VERSION https://s3.amazonaws.com/json-c_releases/releases tar.gz
+    CFLAGS=-Wno-error build_simple json-c $JSONC_VERSION https://s3.amazonaws.com/json-c_releases/releases tar.gz
 }
 
 
