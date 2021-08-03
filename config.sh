@@ -81,7 +81,7 @@ function build_curl {
         # flags="$flags --with-darwinssl"
     else  # manylinux
         flags="$flags --with-ssl"
-        build_openssl
+        suppress build_openssl
     fi
 #    fetch_unpack https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.gz
     (cd curl-${CURL_VERSION} && echo "############### $CURL_VERSION ##############"\
@@ -200,7 +200,7 @@ function pre_build {
     if [ -n "$IS_OSX" ]; then
 	:
     else  # manylinux
-        build_openssl
+        suppress build_openssl
     fi
 
     fetch_unpack https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.gz
