@@ -120,6 +120,7 @@ function build_gdal {
 
     fetch_unpack http://download.osgeo.org/gdal/${GDAL_VERSION}/gdal-${GDAL_VERSION}.tar.gz
     (cd gdal-${GDAL_VERSION} \
+        && patch -u -p2 < ../patches/2310.diff \
         && ./configure \
             --disable-debug \
             --disable-static \
